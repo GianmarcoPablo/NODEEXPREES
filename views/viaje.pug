@@ -1,0 +1,33 @@
+extends ./layout/index
+
+block contenido
+    main.container.mt-5 
+        .row
+            .col-md-5
+                img(src=`/img/destinos_${viaje.imagen}_ln.jpg`,alt="imagen viaje",class="img-fluid")
+            .col-md-7 
+                h1 #{viaje.titulo}
+                p
+                    svg.icon.icon-tabler.icon-tabler-calendar-due(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M4 5m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2  1 -2 -2z')
+                        path(d='M16 3v4')
+                        path(d='M8 3v4')
+                        path(d='M4 11h16')
+                        path(d='M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0')
+                    |#{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+                p
+                    svg.icon.icon-tabler.icon-tabler-map-pin(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        circle(cx='12' cy='11' r='3')
+                        path(d='M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.828 0l-4.244 -4.243a8 8 0 1 1 11.315 0z')
+                    |#{viaje.precio} Dolares
+                p   
+                    svg.icon.icon-tabler.icon-tabler-user(xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewbox='0 0 24 24' stroke-width='1.5' stroke='#dc135f' fill='none' stroke-linecap='round' stroke-linejoin='round')
+                        path(stroke='none' d='M0 0h24v24H0z' fill='none')
+                        path(d='M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0')
+                        path(d='M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2')
+                    |#{viaje.disponibles} disponibles
+                p= viaje.descripcion 
+                
+    
